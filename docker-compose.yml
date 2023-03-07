@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    container_name: testeom30
+    restart: always
+    ports:
+    - "2000:8000"
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "6432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: TESTEOM30
+    
+  redis-app:
+    image: redis:7.0.9
+    ports:
+      - "6378:6379"
