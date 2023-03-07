@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string("Name");
             $table->string("motherName");
             $table->date("BirthDay");
-            $table->string("CPF");
-            $table->string("CNS");
+            $table->string("CPF")->unique();
+            $table->string("CNS")->unique();
             $table->timestamps();
         });
         Schema::create('addresses', function (Blueprint $table) {
